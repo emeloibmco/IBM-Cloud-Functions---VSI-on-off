@@ -2,7 +2,7 @@
 
 En esta guía encontrará el paso a paso para automatizar la tarea de encendido y apagado de una máquina virtual dentro de IBM Cloud mediante la herramienta Functions. Los pasos  descritos en esta guía se basan en la documentación presente en este [LINK](https://qiita.com/takeyan/items/da3af7eed57733ad8609).
 
-## ✅Prerrequisitos 
+## Prerrequisitos 
 
 * [Ibmcloud CLI](https://cloud.ibm.com/docs/cli?topic=cli-install-ibmcloud-cli)
 * [Docker CE](https://docs.docker.com/get-docker/)
