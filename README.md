@@ -10,7 +10,7 @@ En esta guía encontrará el paso a paso para automatizar la tarea de encendido 
 
 ## Creación de acciones :pushpin:
 
-1). Inicie sesión en ibmcloud y configure la organización, grupo de recursos y espacio de trabajo en Cloud Foundry, para esto ejecute los siguientse comandos.
+1). Inicie sesión en IBM Cloud y configure la organización, grupo de recursos y espacio de trabajo en Cloud Foundry, para esto ejecute los siguientse comandos.
 
 ```sh
  ibmcloud login --sso
@@ -18,7 +18,7 @@ En esta guía encontrará el paso a paso para automatizar la tarea de encendido 
  ibmcloud target -g Default
 ```
 
-2). Cree un nombre de espacios donde se ejecutará la acción y especifiquelo como destino mediante los siguientes comandos (También puede usar uno existente).
+2). Cree un nombre de espacios donde se ejecutará la acción y especifíquelo como destino mediante los siguientes comandos (También puede usar uno existente).
 
 ```sh
 ibmcloud fn namespace create <nombre_namespace>
@@ -81,27 +81,34 @@ docker run --rm  -v  " $ PWD : / tmp" ibmfunctions / action-python-v3.7 bash -c 
 
 7). Empaquete virtualenv y __main__.py en un archivo zip.
 
+```sh
 zip -r takeyan-vsi-classic-power.zip virtualenv __main__.py
+```
 
 8). Mediante los siguientes comandos cree dos acciones (una de encendido y otra de apagado de la VSI) e implemente el paquete (archivo zip).
 
+```sh
 ibmcloud fn action create takeyan-vsi-classic-power-on takeyan-vsi-classic-power.zip --kind python:3.7
 ibmcloud fn action create takeyan-vsi-classic-power-off takeyan-vsi-classic-power.zip --kind python:3.7
+```
 
 ## Creación clave API :pushpin:
 
 Para permitir que una acción de Functions modifique el estado de su infraestructura siga estos pasos:
 
 1). En la página de IBM Cloud ingrese en la sección **Gestionar -> Acceso (IAM)**.
-2). En la pestaña Usuarios seleccione su correspondiente usuario.
+
+2). En la pestaña **Usuarios** seleccione su correspondiente usuario.
+
 3). De la sección **Contraseña de VPN** copie el valor de nombre de usuario.
-4). De click en la opción **Crear una clade de API de IBM Cloud** y copie el valor generado, recuerde que solo podrá ver este valor una vez.
+
+4). De click en la opción **Crear una clave de API de IBM Cloud** y copie el valor generado, recuerde que solo podrá ver este valor una vez.
 
 <img width="800" alt="workspace" src="USER-API.png"> 
 
 ## Establecer parámetros :pushpin:
 
-Se establecerán 3 parámetros para ejecutar las acciones:
+Se establecerán 4 parámetros para ejecutar las acciones:
 
 * vsi: Nombre VSI del destino de la operación
 * power: on / off
@@ -110,7 +117,7 @@ Se establecerán 3 parámetros para ejecutar las acciones:
 
 Para hacerlo siga estos pasos:
 
-1. Ingrese en el menú de tres líneas y en el seleccione la opción **Functions -> Acciones**. En esta opción encontrará las dos acciones creadas anteriormente.
+1. Ingrese en el menú de tres líneas y en él seleccione la opción **Functions -> Acciones**. En esta opción encontrará las dos acciones creadas anteriormente.
 
 <img width="800" alt="workspace" src="FUNCTIONS-ACTIONS.png"> 
 
@@ -118,13 +125,13 @@ Para hacerlo siga estos pasos:
 
 <img width="800" alt="workspace" src="PARAMETERS.png"> 
 
-3. Ingrese en la acción de encendido y en la estaña **Parameters** e ingrese los valores de la imagen anterior, cambiando el valor de **power** por **OFF**.
+3. Siga los mismos pasos anteriores para la acción de encendido.
 
 ## Creación del disparador :pushpin:
 
-Para que estas acciones se ejecuten de forma periódica relacionelas a un disparador o trigger, para hacerlo siga estos pasos:
+Para que estas acciones se ejecuten de forma periódica relaciónelas a un disparador o trigger, para hacerlo siga estos pasos:
 
-1. En la pestaña **Connected triggers**.
+1. Ingrese a la pestaña **Connected triggers**.
 2. De click en **Add trigger** y seleccione la opción **Periodic**.
 3. Proporcione un nombre, seleccione las opciones que se adapten a su organización y guarde los cambios.
 
