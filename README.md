@@ -1,6 +1,6 @@
 # IBM FUNCTIONS VSI ON-OFF ☁️
 
-En esta guía encontrará el paso a paso para automatizar la tarea de encendido y apagado de una máquina virtual dentro de IBM Cloud mediante la herramienta Functions. Los pasos acá descritos fueron tomados y adaptados de la documentación presente en este [LINK](https://qiita.com/takeyan/items/da3af7eed57733ad8609).
+En esta guía encontrará el paso a paso para automatizar la tarea de encendido y apagado de una máquina virtual dentro de IBM Cloud mediante la herramienta Functions. Los pasos  descritos en esta guía se basan en la documentación presente en este [LINK](https://qiita.com/takeyan/items/da3af7eed57733ad8609).
 
 ## Prerrequisitos :pushpin:
 
