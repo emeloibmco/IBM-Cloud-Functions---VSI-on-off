@@ -8,7 +8,7 @@ En esta guía encontrará el paso a paso para automatizar la tarea de encendido 
 * [Docker CE](https://docs.docker.com/get-docker/)
 * [Functions Plugin](https://cloud.ibm.com/docs/cli?topic=cli-plug-ins)
 
-## ✅Creación de acciones
+## 📍Creación de acciones
 
 1). Inicie sesión en IBM Cloud y configure la organización, grupo de recursos y espacio de trabajo en Cloud Foundry, para esto ejecute los siguientse comandos.
 
@@ -92,7 +92,7 @@ ibmcloud fn action create takeyan-vsi-classic-power-on takeyan-vsi-classic-power
 ibmcloud fn action create takeyan-vsi-classic-power-off takeyan-vsi-classic-power.zip --kind python:3.7
 ```
 
-## ✅Creación clave API
+## 📍Creación clave API
 
 Para permitir que una acción de Functions modifique el estado de su infraestructura siga estos pasos:
 
@@ -106,7 +106,7 @@ Para permitir que una acción de Functions modifique el estado de su infraestruc
 
 <img width="800" alt="workspace" src="USER-API.png"> 
 
-## ✅Establecer parámetros
+## 📍Establecer parámetros
 
 Se establecerán 4 parámetros para ejecutar las acciones:
 
@@ -127,7 +127,7 @@ Para hacerlo siga estos pasos:
 
 3. Siga los mismos pasos anteriores para la acción de encendido.
 
-## ✅Creación del disparador
+## 📍Creación del disparador
 
 Para que estas acciones se ejecuten de forma periódica relaciónelas a un disparador o trigger, para hacerlo siga estos pasos:
 
@@ -141,7 +141,7 @@ Para que estas acciones se ejecuten de forma periódica relaciónelas a un dispa
 
 Puede probar su ccorrecto funcionamiento al establecer el trigger a una hora cercana y verificar que su instancia cambie de estado.
 
-## ✅Referencias
+## 📍Referencias
 
 La información acá descrita está basada en el contenido de la publicación : https://qiita.com/takeyan/items/da3af7eed57733ad8609
 
